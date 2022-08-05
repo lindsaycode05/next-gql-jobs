@@ -90,20 +90,58 @@ const Home: NextPage<IJob> = ({ jobs }) => {
                 src={job.company.logoUrl}
               />
               <Box display='flex' flexDirection='column'>
-                <Typography variant='h6'>{job.title}</Typography>
+                <Typography sx={{ typography: { xs: 'body1', md: 'h6' } }}>
+                  {job.title}
+                </Typography>
                 <Link
+                  marginTop={0.3}
                   target='_blank'
                   href={job.company.websiteUrl}
-                  sx={{ color: '#4a2512', textDecorationColor: '#4a2512' }}
+                  sx={{
+                    color: '#4a2512',
+                    textDecorationColor: '#4a2512',
+                    typography: { xs: 'body2', md: 'body1' },
+                  }}
                 >
                   {job.company.name}
+                </Link>
+                <Typography
+                  variant='body2'
+                  marginTop={1}
+                  sx={{ display: { md: 'none' } }}
+                >
+                  {job.locationNames}
+                </Typography>
+                <Link
+                  sx={{
+                    display: { xs: 'block', md: 'none' },
+                    backgroundColor: '#4a2512',
+                    color: '#faf0e6',
+                    padding: 1.3,
+                    textDecoration: 'none',
+                    borderRadius: 2,
+                    transition: '.2s ease',
+                    '&:hover': {
+                      opacity: 0.9,
+                    },
+                  }}
+                  href={job.applyUrl}
+                  marginTop={4.4}
+                >
+                  Apply Now
                 </Link>
               </Box>
             </Box>
           </Box>
-          <Typography marginTop={5.5}>{job.locationNames}</Typography>
+          <Typography
+            marginTop={5.5}
+            sx={{ display: { xs: 'none', md: 'block' } }}
+          >
+            {job.locationNames}
+          </Typography>
           <Link
             sx={{
+              display: { xs: 'none', md: 'block' },
               backgroundColor: '#4a2512',
               color: '#faf0e6',
               padding: 1.3,
