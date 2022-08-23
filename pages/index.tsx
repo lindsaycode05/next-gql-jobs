@@ -47,14 +47,6 @@ const Home: NextPage<IJob> = ({ jobs }) => {
           >
             Lindsay
           </Link>{' '}
-          for{' '}
-          <Link
-            sx={{ color: '#a1785c', textDecorationColor: '#a1785c' }}
-            target='_blank'
-            href='https://jobbatical.com'
-          >
-            Jobbatical)
-          </Link>
         </Typography>
       </Box>
 
